@@ -6,8 +6,8 @@
  *   2) 安装/启动时检查已打开的平台页，脚本缺失就补注入，版本不一致才重载。
  */
 var MATCHES = [
-  'http://58.247.144.181:18099/*',
-  'https://58.247.144.181:18099/*',
+  'http://YOUR_LABEL_STUDIO_HOST/*',
+  'https://YOUR_LABEL_STUDIO_HOST/*',
   'http://localhost/*',
   'http://127.0.0.1/*'
 ];

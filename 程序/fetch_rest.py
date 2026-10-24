@@ -3,7 +3,7 @@ import urllib.request
 import urllib.error
 import time
 
-HOST = 'http://58.247.144.181:18099'
+HOST = 'http://YOUR_LABEL_STUDIO_HOST'
 CK = open('数据/cookie_header.txt').read().strip()
 PROJECTS = {'cam11': 15, 'cam12': 16}
 

@@ -249,18 +249,18 @@
     return a[Math.min(i, a.length - 1)];
   }
 
-  /* 人工数据源（2448322800 的标注/草稿，本地修正也算）——不含凉白开机器预测。 */
+  /* 人工数据源（YOUR_ACCOUNT_ID 的标注/草稿，本地修正也算）——不含凉白开机器预测。 */
   function humanSourceOf(task) {
     if (!task || task.__missing || task.__error || task.__unrelated) return null;
     if (task.__local) return { kind: 'prediction', index: 0, human: true };
     var anns = task.annotations || [];
-    // 用户口径：以 2448322800 这个账号的最新标注为主；有 244 的标注就只在其中挑最新的，
+    // 用户口径：以 YOUR_ACCOUNT_ID 这个账号的最新标注为主；有 244 的标注就只在其中挑最新的，
     // 只有完全没有 244 的标注时才退回"任意账号的最新标注"。
     function byUser(a) {
       var u = a && (a.completed_by || a.created_by || a.user);
       return u && u.username ? String(u.username) : null;
     }
-    var USER = '2448322800';
+    var USER = 'YOUR_ACCOUNT_ID';
     var best = -1, bestTs = -1;
     for (var i = 0; i < anns.length; i++) {
       var a = anns[i];

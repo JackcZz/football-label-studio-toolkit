@@ -3,8 +3,8 @@ import csv
 import collections
 import os
 
-HOST = 'http://58.247.144.181:18099'
-OUT = '数据/migu_1014_审查总控台'
+HOST = 'http://YOUR_LABEL_STUDIO_HOST'
+OUT = '数据/YOUR_PROJECT_审查总控台'
 CAMS = [('cam2', '数据/raw_cam2.json', 5), ('cam3', '数据/raw_cam3.json', 6), ('cam4', '数据/cam4_tasks.json', 7),
         ('cam5', '数据/raw_cam5.json', 8), ('cam6', '数据/raw_cam6.json', 9), ('cam7', '数据/raw_cam7.json', 10),
         ('cam8', '数据/raw_cam8.json', 11), ('cam9', '数据/raw_cam9.json', 12), ('cam10', '数据/raw_cam10.json', 14),
@@ -349,12 +349,12 @@ for cam, raw, pid in CAMS:
 
     page = f"""<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><title>{cam} 审查页</title><style>{CSS}</style></head><body>
 <header>
-<h1><a href="index.html">← 总控台</a> &nbsp; migu_1014_{cam} · {diag['frames']} 帧 / {boxes:,} 框 / 均值 {avg:.1f} 框每帧</h1>
+<h1><a href="index.html">← 总控台</a> &nbsp; YOUR_PROJECT_{cam} · {diag['frames']} 帧 / {boxes:,} 框 / 均值 {avg:.1f} 框每帧</h1>
 <div class="bar">
 <span class="tag p0">P0 {pri_cnt['P0']}</span><span class="tag p1">P1 {pri_cnt['P1']}</span><span class="tag p2">P2 {pri_cnt['P2']}</span>
 <span class="tag" style="background:#FCEBEB;color:#A32D2D">teamA/B 缺号待纠错 {n_miss}</span>
 <span class="tag ok">正常帧 {st_cnt['ok']}</span>
-<span class="hint">自动修正批 {autofix_n} 条 → ../migu_1014_全镜头标注数据/{cam}/auto_fix.csv</span>
+<span class="hint">自动修正批 {autofix_n} 条 → ../YOUR_PROJECT_全镜头标注数据/{cam}/auto_fix.csv</span>
 </div>
 <div class="tabs"><span class="tab on" id="tissues" onclick="showTab('issues')">问题清单</span><span class="tab" id="tframes" onclick="showTab('frames')">全帧总览</span><span class="tab" id="tmiss" onclick="showTab('miss')">缺号待纠错</span></div>
 </header>
@@ -423,16 +423,16 @@ tr = ''.join(
     for shared in [set(ro.get('teamA', [])) & set(ro.get('teamB', []))])
 
 tot = lambda i: sum(r[i] for r in console_rows)
-index = f"""<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><title>migu_1014 审查总控台</title><style>{CSS}
+index = f"""<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><title>YOUR_PROJECT 审查总控台</title><style>{CSS}
 tr.row{{cursor:pointer}} tr.row:hover{{background:#F6F9FC}}</style></head><body>
-<header><h1>migu_1014 审查总控台 · 11 机位 / 82,500 帧 / {tot(3):,} 框</h1>
+<header><h1>YOUR_PROJECT 审查总控台 · 11 机位 / 82,500 帧 / {tot(3):,} 框</h1>
 <div class="bar"><span class="hint">点击机位进入该镜头审查页 · 数据为模型预测结果 · 图片在 Label Studio 在线查看</span></div></header>
 <div style="padding:14px 20px">
 <table><thead><tr><th>机位</th><th>项目ID</th><th>帧数</th><th>框数</th><th>框/帧</th>
 <th><span class="tag p0">P0</span></th><th><span class="tag p1">P1</span></th><th><span class="tag p2">P2</span></th>
 <th>自动修正</th><th style="color:#A32D2D">缺号(teamA/B)</th><th>teamA 名单</th><th>teamB 名单</th></tr></thead>
 <tbody>{tr}</tbody></table>
-<p class="hint">P0 = 机器已给建议值，扫一眼确认；P1 = 必须人工判定；P2 = 低风险提示。自动修正批 CSV 在 migu_1014_全镜头标注数据/各机位/auto_fix.csv。<br>名单按「号码→队别纯度」分离（某号码 ≥90% 出现在某队 = 该队专属；40-60% = 两队共有，标 *）；出现在错误队别的框会进入 P1「号码队别不符」。</p>
+<p class="hint">P0 = 机器已给建议值，扫一眼确认；P1 = 必须人工判定；P2 = 低风险提示。自动修正批 CSV 在 YOUR_PROJECT_全镜头标注数据/各机位/auto_fix.csv。<br>名单按「号码→队别纯度」分离（某号码 ≥90% 出现在某队 = 该队专属；40-60% = 两队共有，标 *）；出现在错误队别的框会进入 P1「号码队别不符」。</p>
 </div></body></html>"""
 open(f'{OUT}/index.html', 'w').write(index)
 print('console done')

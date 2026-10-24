@@ -2,7 +2,7 @@
 
 Label Studio 足球赛多机位机器标注的 **质检 + AI 代写** 工具集。
 
-> 沉淀自 migu_1014 项目（11 机位足球赛，每机位 7500 帧）。机器预测（凉白开）已预标球员框和球衣号码，但存在漏检、多检、号码错、串号等问题。本工具集用 v8b 引擎逐帧链式修正，实现「AI 接管大部分机械活、人只判异常与切换点」。
+> 沉淀自 YOUR_PROJECT 项目（11 机位足球赛，每机位 7500 帧）。机器预测（凉白开）已预标球员框和球衣号码，但存在漏检、多检、号码错、串号等问题。本工具集用 v8b 引擎逐帧链式修正，实现「AI 接管大部分机械活、人只判异常与切换点」。
 
 ---
 
@@ -76,9 +76,20 @@ migu-labeling-toolkit/
 
 ---
 
-## ⚠️ 安全提醒
+## ⚠️ 安全提醒（已脱敏）
 
-- 代码里 `HOST` 是内网地址，上传 GitHub 前请确认不敏感，或替换成占位符。
+本仓库所有敏感信息已替换为占位符，**用之前把占位符改回你的实际值**：
+
+| 占位符 | 原含义 | 替换回 |
+|---|---|---|
+| `YOUR_LABEL_STUDIO_HOST` | 完整地址（IP:端口） | `http://<你的IP>:<端口>` |
+| `YOUR_HOST` | 纯 IP | `<你的IP>` |
+| `YOUR_ACCOUNT_ID` | 账号（代写/审核账号） | `<你的账号>` |
+| `YOUR_DATA_PATH` | 图片数据路径前缀 | `/data/local-files/` 等 |
+| `YOUR_PROJECT` | 项目代号 | `migu_1014` 等 |
+| `YOUR_DATA_DIR` | 数据目录 | `migu_data` 等 |
+
+- **Chrome 插件**（`工具/ls-frame-inspector/`）的 `manifest.json`、`bg.js` 里的 `YOUR_LABEL_STUDIO_HOST` 必须改回真实域名，否则插件无法匹配目标站。
 - 不要把 `cookie_header.txt`、`sessionid` 等凭证上传（`.gitignore` 已排除）。
 - 本工具集的代写走 Label Studio 的 POST/PATCH 接口，务必在操作前确认目标帧的标注状态，避免重复标注。
 

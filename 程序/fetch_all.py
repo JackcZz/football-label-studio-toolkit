@@ -2,7 +2,7 @@ import json
 import urllib.request
 import concurrent.futures
 
-HOST = 'http://58.247.144.181:18099'
+HOST = 'http://YOUR_LABEL_STUDIO_HOST'
 CK = open('数据/cookie_header.txt').read().strip()
 PROJECTS = {'cam2': 5, 'cam3': 6, 'cam5': 8, 'cam6': 9, 'cam7': 10,
             'cam8': 11, 'cam9': 12, 'cam10': 14, 'cam11': 15, 'cam12': 16}

@@ -46,7 +46,7 @@ a{color:#185FA5}
 .kbd{font-size:11px;color:#888780}
 </style></head><body>
 <header>
-<h1>migu_1014_cam4 · 三路同步对比工作站</h1>
+<h1>YOUR_PROJECT_cam4 · 三路同步对比工作站</h1>
 <button id="pp">▶ 播放</button>
 <button onclick="step(-1)">◀ 上一帧</button>
 <button onclick="step(1)">下一帧 ▶</button>

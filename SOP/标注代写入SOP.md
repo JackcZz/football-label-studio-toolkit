@@ -1,6 +1,6 @@
 # 足球标注质检 + AI 代写 SOP（可复用）
 
-> 沉淀自 migu_1014 项目（Label Studio 多机位足球赛机器标注质检），2026-10-24/25 完整跑通 cam4、cam3 两镜头后总结。
+> 沉淀自 YOUR_PROJECT 项目（Label Studio 多机位足球赛机器标注质检），2026-10-24/25 完整跑通 cam4、cam3 两镜头后总结。
 > 适用场景：凉白开（机器预测）已有原始检测，但号码/框有误差，需要「AI 接管大部分、人只判异常」的质检+代写流水线。
 
 ---
@@ -27,7 +27,7 @@ Label Studio 里每个「帧」是一个 task，机器预测（凉白开）已�
 ### 1. 环境
 - macOS + Python 3.13（`~/.workbuddy/binaries/python/versions/3.13.12/bin/python3`）。
 - Chrome 调试模式：启动器 `start-chrome-debug.command`，端口 **9222**，配置副本 `~/ChromeDebugProfile`。
-- Label Studio 地址：`http://58.247.144.181:18099`（浏览器已登录）。
+- Label Studio 地址：`http://YOUR_LABEL_STUDIO_HOST`（浏览器已登录）。
 
 ### 2. 工具链（都在工作区 `程序/` 和 `数据/`）
 | 工具 | 作用 |
@@ -39,7 +39,7 @@ Label Studio 里每个「帧」是一个 task，机器预测（凉白开）已�
 | scan 模板 | 扫描验证（号码集/无号/单标注/串号） |
 
 ### 3. 账号与机位映射
-- 代写账号：`2448322800`；用户账号：`3488595323`（cam4 是 2448322800 审，cam3 是 3488595323 审——以实际 `completed_by` 为准）。
+- 代写账号：`YOUR_ACCOUNT_ID`；用户账号：`YOUR_ACCOUNT_ID`（cam4 是 YOUR_ACCOUNT_ID 审，cam3 是 YOUR_ACCOUNT_ID 审——以实际 `completed_by` 为准）。
 - project 映射：cam2=5、cam3=6、cam4=7、cam5=8…（见 `程序/fetch_all.py`）。
 
 ### 4. 一次性的「取 cookie」

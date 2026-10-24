@@ -2,7 +2,7 @@
 
 挂在 Label Studio 页面上的 Chrome 侧栏插件：**点哪一帧，就出那一帧的标注信息 + 前后帧对照**；并基于前后帧给出**修正建议**——画布上叠加半透明错位建议框，你点头确认后才写入平台。专为人工审核机器识别结果设计。
 
-适配平台：`http://58.247.144.181:18099`（Label Studio，项目 migu_1014_cam4 等项目通用）。
+适配平台：`http://YOUR_LABEL_STUDIO_HOST`（Label Studio，项目 YOUR_PROJECT_cam4 等项目通用）。
 
 ---
 
@@ -153,7 +153,7 @@ URL 监听（LS 是 SPA，点列表行会改 ?task= 参数，400ms 轮询兜底�
 - 前后帧按 task id ±1 推断，若平台任务 id 与帧序不一致，会提示帧号不连续（以面板显示的帧号为准）；
 - 前后帧定位依赖左侧列表**已加载**的页：直接输 URL 打开某一帧、或相邻帧还没滚动到时，面板会提示「未定位」——在左侧列表翻页/滚动，或直接点相邻行即可恢复；
 - 「跳到帧」搜索是有界的（≤16 页 ×100 条，约 1-2MB）：已登记帧瞬跳；首帧升序时按估算页码就近探测（通常 1-3 页命中）；若平台返回顺序不按帧号，可能搜不到，面板会明说；
-- 目前只适配 `58.247.144.181:18099` 和 localhost；换平台需改 `manifest.json` 里的 `host_permissions` 和 `content_scripts.matches`（加一行域名即可）。
+- 目前只适配 `YOUR_LABEL_STUDIO_HOST` 和 localhost；换平台需改 `manifest.json` 里的 `host_permissions` 和 `content_scripts.matches`（加一行域名即可）。
 
 ## 7. 装好后没反应 / 算法没更新？按这个顺序排查
 

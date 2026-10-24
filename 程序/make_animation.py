@@ -105,7 +105,7 @@ input[type=range]{width:400px}
 #info{font-variant-numeric:tabular-nums;color:#5F5E5A;font-size:13px}
 </style></head><body>
 <header>
-<h1>migu_1014_cam4 · 真实画面轨迹回放（7500 帧 / 300 秒 / 固定机位背景）</h1>
+<h1>YOUR_PROJECT_cam4 · 真实画面轨迹回放（7500 帧 / 300 秒 / 固定机位背景）</h1>
 <div class="ctl">
 <button id="pp">▶ 播放</button>
 <input type="range" id="sl" min="0" max="__MAX__" value="0">

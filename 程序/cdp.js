@@ -1,7 +1,7 @@
 const fs = require('fs');
 const targetId = process.argv[2];
 const mode = process.argv[3];
-const HOST = 'http://58.247.144.181:18099';
+const HOST = 'http://YOUR_LABEL_STUDIO_HOST';
 const ws = new WebSocket(`ws://127.0.0.1:9222/devtools/page/${targetId}`);
 let id = 0;
 const pending = new Map();

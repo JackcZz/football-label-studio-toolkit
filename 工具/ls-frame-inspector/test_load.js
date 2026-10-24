@@ -52,7 +52,7 @@ const sb = {
   console: { log() { }, warn() { }, error() { }, info() { } },
   setTimeout, clearTimeout, setInterval: () => 0, clearInterval, Promise, JSON, Math, Date, Object, Array,
   String, Number, Boolean, RegExp, Error, Map, Set, isFinite, parseInt, parseFloat, encodeURIComponent, decodeURIComponent,
-  location: { href: 'http://58.247.144.181:18099/projects/7/data?task=1', origin: 'http://58.247.144.181:18099', pathname: '/projects/7/data', search: '?task=1' },
+  location: { href: 'http://YOUR_LABEL_STUDIO_HOST/projects/7/data?task=1', origin: 'http://YOUR_LABEL_STUDIO_HOST', pathname: '/projects/7/data', search: '?task=1' },
   document: doc, chrome: chromeStub, navigator: { clipboard: null, userAgent: 'node' },
   requestAnimationFrame: () => 0, cancelAnimationFrame: () => { },
   URL, URLSearchParams, Blob: function () { }, MouseEvent: function () { }, KeyboardEvent: function () { },

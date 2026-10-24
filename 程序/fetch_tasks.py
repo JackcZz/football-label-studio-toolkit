@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-HOST = 'http://58.247.144.181:18099'
+HOST = 'http://YOUR_LABEL_STUDIO_HOST'
 CK = open('数据/cookie_header.txt').read().strip()
 
 

@@ -18,7 +18,7 @@ function num(id, text) {
 // ---- mock task：帧 5203，机器预测 6 框（1 个缺号、1 个重复号） ----
 const task = {
   id: 38013,
-  data: { frame: 5203, image: '/data/local-files/?d=/x.jpg' },
+  data: { frame: 5203, image: '/YOUR_DATA_PATH/?d=/x.jpg' },
   predictions: [{
     model_version: '凉白开', score: 0.5, created_at: '2026-10-15T10:00:00Z',
     result: [

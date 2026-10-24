@@ -3,8 +3,8 @@ import csv
 import os
 import collections
 
-HOST = 'http://58.247.144.181:18099'
-OUT = '数据/migu_1014_全镜头标注数据'
+HOST = 'http://YOUR_LABEL_STUDIO_HOST'
+OUT = '数据/YOUR_PROJECT_全镜头标注数据'
 CAMS = [('cam2', '数据/raw_cam2.json', 5), ('cam3', 'raw_cam3.json', 6), ('cam4', 'cam4_tasks.json', 7),
         ('cam5', 'raw_cam5.json', 8), ('cam6', 'raw_cam6.json', 9), ('cam7', 'raw_cam7.json', 10),
         ('cam8', 'raw_cam8.json', 11), ('cam9', 'raw_cam9.json', 12), ('cam10', 'raw_cam10.json', 14),
@@ -68,7 +68,7 @@ with open(f'{OUT}/汇总.csv', 'w', newline='', encoding='utf-8-sig') as f:
     w.writerows(summary)
 
 with open(f'{OUT}/README.txt', 'w', encoding='utf-8') as f:
-    f.write(f"""migu_1014 全镜头标注数据（11 个机位，数据源 Label Studio predictions，只读导出）
+    f.write(f"""YOUR_PROJECT 全镜头标注数据（11 个机位，数据源 Label Studio predictions，只读导出）
 ================================================================
 
 目录结构

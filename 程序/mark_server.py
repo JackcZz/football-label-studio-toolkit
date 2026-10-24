@@ -3,7 +3,7 @@ import socketserver
 import json
 import os
 
-ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '数据', 'migu_1014_审查总控台')
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '数据', 'YOUR_PROJECT_审查总控台')
 MARKS = os.path.join(ROOT, 'marks.json')
 
 

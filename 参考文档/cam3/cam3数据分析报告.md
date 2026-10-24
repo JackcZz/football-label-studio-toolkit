@@ -1,6 +1,6 @@
 # cam3（3号镜头）数据分析报告
 
-> 时间 2026-10-24 · project 6（migu_1014_cam3）· 账号 3488595323
+> 时间 2026-10-24 · project 6（YOUR_PROJECT_cam3）· 账号 YOUR_ACCOUNT_ID
 
 ## 一、进度总览
 
