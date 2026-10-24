@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "LS 帧检助手（Frame Inspector）",
+  "version": "2.13.20",
+  "description": "在 Label Studio 页面点击任务时，侧栏展示当前帧及前后帧的标注信息、帧间差异与质检提示。只按需请求单个任务接口，不批量下载数据。",
+  "permissions": ["storage", "scripting", "tabs"],
+  "action": { "default_title": "帧检助手：点击注入并打开面板" },
+  "background": { "service_worker": "bg.js" },
+  "host_permissions": [
+    "http://58.247.144.181:18099/*",
+    "https://58.247.144.181:18099/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://58.247.144.181:18099/*",
+        "https://58.247.144.181:18099/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": ["core.js", "api.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

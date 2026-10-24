@@ -1,0 +1,30 @@
+# 凭证 / 敏感信息（绝不提交）
+*cookie*.txt
+*cookie*.json
+*cookies*.json
+sessionid
+csrftoken
+*.session
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 临时 / 日志
+*.log
+/tmp/
+*.tmp
+
+# 数据中间产物（原始标注数据、payload 等，本仓库只保留代码与文档）
+数据/
+raw_*.json
+write_payloads_*.json
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
