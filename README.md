@@ -1,4 +1,4 @@
-# migu-labeling-toolkit
+# football-label-studio-toolkit
 
 Label Studio 足球赛多机位机器标注的 **质检 + AI 代写** 工具集。
 
@@ -9,7 +9,7 @@ Label Studio 足球赛多机位机器标注的 **质检 + AI 代写** 工具集�
 ## 目录结构
 
 ```
-migu-labeling-toolkit/
+football-label-studio-toolkit/
 ├── README.md                  # 本文件
 ├── 文件说明.md                 # 每个文件的用途标注（先读这个）
 ├── .gitignore
